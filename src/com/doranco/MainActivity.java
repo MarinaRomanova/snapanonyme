@@ -6,10 +6,17 @@ import java.util.Scanner;
 
 public class MainActivity {
     static Scanner sc;
+    int index; //user is logged with position of index
 
     public MainActivity() {
          sc = new Scanner(System.in);
         displayWelcomeScreen();
+    }
+
+    public MainActivity(int index) {
+        sc = new Scanner(System.in);
+        displayWelcomeScreen();
+        this.index = index;
     }
 
     public static void login(){
@@ -58,7 +65,7 @@ public class MainActivity {
             Log in successful and starting Articles Activity
             --------------------------------------------------
              */
-            new ArticlesActivity();
+            new ArticlesActivity(index);
             //System.out.println(Utils.readFromFile("Article.ser"));
         }
         else {

@@ -94,4 +94,39 @@ public class Utils {
         }
         return objects;
     }
+
+    /*
+    Read an element by position in the list
+     */
+
+    public static Object readFromFile(int idIndex, String filepath) {
+        ObjectInputStream objectIn = null;
+        Object object=null;
+        //boolean next = true;
+        //List<Object> objects = new ArrayList<Object>();
+        BufferedInputStream bf = null;
+
+        try {
+            bf = new BufferedInputStream(new FileInputStream(
+                    filepath));
+        } catch (FileNotFoundException e) {
+            //exception
+        }
+
+        try {
+            for (int i=0; i<=idIndex; i++) {
+                objectIn = new ObjectInputStream(bf);
+
+                if (objectIn != null) {
+                    object = objectIn.readObject();
+                } else {
+                    objectIn.close();
+
+                }
+            }
+        } catch (Exception e) {
+            e.getCause();
+        }
+        return object;
+    }
 }
