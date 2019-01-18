@@ -13,8 +13,7 @@ public class MainActivity {
     }
 
     public static void login(){
-        System.out.println();
-        System.out.println(("Log in").toUpperCase());
+        System.out.println(("\nLog in").toUpperCase());
         System.out.println("Enter your login");
         String login = sc.nextLine();
         List objects = Utils.readFromFile("User.ser");
@@ -69,8 +68,7 @@ public class MainActivity {
     }
 
     public static void subscribe(){
-        System.out.println();
-        System.out.println(("Let sign you up").toUpperCase());
+        System.out.println(("\nLet sign you up").toUpperCase());
         System.out.println("Enter your login");
         String login = sc.nextLine();
         String password, confirmedPassword;
